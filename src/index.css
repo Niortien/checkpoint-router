@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +16,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.card{
+  border: 2px solid red;
+  width: 24%;
+  box-shadow: 10px 14px 12px black;
+  
+  
+}
+img{
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+.link{
+  text-decoration: none;
+}
+
