@@ -5,10 +5,11 @@ import { Route, Routes } from 'react-router-dom';
 import Component1 from './Components/Component1';
 import FilmDetails from './Components/FilmDetails';
 import CardList from './Components/CardList';
+import { useState } from 'react';
 
 
 function App() {
-  let films=[
+  let [films, setFilms]=useState([
     {
       id:1,
       title:" Erling Haaland",
@@ -32,14 +33,21 @@ function App() {
       img_path:"https://resizer.enetpulse.com/datacore/2023-7-22/900x600-7b88abcfec31faa30eea7d4269bdcb48.jpg"
     }
 
-  ]
+  ])
+
+
+  const [filter, setFilter] = useState("");
+
+  function searchData(data) {
+    setFilter(data);
+  }
  
   return (
    
       <Routes>
-        <Route path='/composant1' element={<Component1 data={films} />}/>
+        {/* <Route path='/composant1' element={<Component1 data={films.filter(elt => elt.title.toLowerCase() == filter.toLowerCase() )} searchData={searchData}/>}/> */}
         <Route path='/filmdetails/:id' element={<FilmDetails data={films}/>}/>
-        <Route path='/' element={<CardList data={films}/>}/>
+        <Route path='/' element={<CardList  data={films.filter(elt => elt.title.toLowerCase().includes(filter.toLowerCase()))}  searchData={searchData}/>}/>
       </Routes>
      
   );

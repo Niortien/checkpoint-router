@@ -41,3 +41,17 @@
   display: flex;
   justify-content: space-around;
 }
+
+
+.form{
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: end;
+  margin-right: 7rem;
+  margin-top: 2rem;
+}
+
+.input{
+  padding : 1rem;
+  border-radius: 0.5rem;
+}
